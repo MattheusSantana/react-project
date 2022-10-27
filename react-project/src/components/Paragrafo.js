@@ -1,6 +1,8 @@
+import styles from "./Paragrafo.module.css";
+
 function Paragrafo(props){
     
-    return <p>{props.text}</p>
+    return <p className={ styles.paragrafoContent}>{props.text}</p>
     
 }
 
