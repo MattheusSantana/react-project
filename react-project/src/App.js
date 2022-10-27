@@ -1,6 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+function sum (a,b){
+  return a+b;
+}
+
 function App() {
   const message = "Hello World";
   return (
@@ -10,6 +14,7 @@ function App() {
         <p>
           {message}
         </p>
+        <h1> Sum = {sum(2,2)}</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
