@@ -1,20 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 
-function sum (a,b){
-  return a+b;
-}
 
 function App() {
+  const backgroundUrl = "https://media2.giphy.com/media/BYoRqTmcgzHcL9TCy1/giphy.gif?cid=ecf05e47ee9efad348581187448b3e9a3094db953ea3783a&rid=giphy.gif&ct=g";
   const message = "Hello World";
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={backgroundUrl} className="App-logo" alt="logo" />
         <p>
           {message}
         </p>
-        <h1> Sum = {sum(2,2)}</h1>
         <a
           className="App-link"
           href="https://reactjs.org"
