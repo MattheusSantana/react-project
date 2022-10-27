@@ -1,4 +1,4 @@
-import Paragrafo from "./Paragrafo"
+import Paragraph from "./Paragraph"
 import styles from "./HelloWorld.modules.css"
 
 function helloWorld() {
@@ -10,8 +10,8 @@ function helloWorld() {
                 Hello World
             </h1>
 
-            <Paragrafo text={lorem}/>
-            <Paragrafo text={ipsum}/>
+            <Paragraph text={lorem}/>
+            <Paragraph text={ipsum}/>
         </div>
     )
 }
