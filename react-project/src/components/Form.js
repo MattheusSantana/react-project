@@ -1,18 +1,28 @@
+import {useState} from "react";
+
+
 function Form(){
     function signUp(e){
         e.preventDefault()
-        console.log("event");
+        console.log("submit event");
     }
+    const [name, setName] = useState("Visitor");
+
     return (
         <div>
-            <h1>Sign up</h1>
+            <h1>WELCOME {name}!</h1>
+
             <form onSubmit={signUp}>
+            <h3>Subscribe:</h3>
                 <div>
-                    <input type="email" name="email" placeholder="Email"></input>
+                    <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Name" />
+                </div>
+                <div>
+                    <input type="email" name="email" placeholder="Email"/>
                 </div>
 
                 <div>
-                    <input type="submit" name="signup" value="Submit"></input>
+                    <input type="submit" name="subscribe" value="subscribe"/>
                 </div>
             </form>
         </div>

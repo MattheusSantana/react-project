@@ -4,7 +4,6 @@ function sendAlert(message){
 }
 
 function AlertButton(props){
-    console.log(props.message);
     return <button type="Button"  onClick={() => sendAlert(props.message)}> Try </button>
     
 }
