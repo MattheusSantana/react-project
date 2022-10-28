@@ -13,7 +13,7 @@ ProductItem.propTypes = {
 
 ProductItem.defaultProps = {
     marker: "Unknown",
-    releaseYear: "NA"
+    releaseYear: 0
 
 }
 
