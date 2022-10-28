@@ -1,18 +1,19 @@
 import {useState} from "react";
-
+import Button from "./Button";
 
 function Form(){
-    function signUp(e){
-        e.preventDefault()
-        console.log("submit event");
+  
+    function eventFatherComponent(){
+        console.log('Father component event called!');
     }
+
     const [name, setName] = useState("Visitor");
 
     return (
         <div>
             <h1>WELCOME {name}!</h1>
 
-            <form onSubmit={signUp}>
+          
             <h3>Subscribe:</h3>
                 <div>
                     <input type="text" name="name" onChange={(e) => setName(e.target.value)} placeholder="Name" />
@@ -21,10 +22,8 @@ function Form(){
                     <input type="email" name="email" placeholder="Email"/>
                 </div>
 
-                <div>
-                    <input type="submit" name="subscribe" value="subscribe"/>
-                </div>
-            </form>
+                <Button event={eventFatherComponent} text="Subscribe"/>
+            
         </div>
     )
 }
