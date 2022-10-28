@@ -1,6 +1,7 @@
 import HelloWorld from './components/HelloWorld';
 import './App.css';
 import AlertButton from './components/AlertButton';
+import Form from './components/Form';
 // import List from './components/List';
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
         <img src={backgroundUrl} className="App-logo" alt="logo" />
         <HelloWorld/>
         <AlertButton message="Welcome!"/>
+        <Form />
+
       </header>
     </div>
   );
