@@ -26,6 +26,7 @@
 
 #login .field input {
     width: 100%;
+    height: 3vh;
     margin-bottom: 10%;
 }
 
