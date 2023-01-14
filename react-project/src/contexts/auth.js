@@ -1,32 +1,46 @@
 import axios from "axios";
-import { createContext } from "react";
+import { createContext, useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api, loginService } from "../services/api";
 export const AuthContext = createContext(0);
 
 export const AuthenticatorProvider =  ({children}) => {
   const [user, setUser] = useState(null);
   const [loginMessage, setloginMessage] = useState("");
+  const [loading, setLoading] = useState(true);
+
+
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    const loggedUser = localStorage.getItem('loggedUser');
+    if(loggedUser){
+      setUser(JSON.parse(loggedUser));
+    }
+    setLoading(false);
+  }, []);
+
+
   const login = async (email, password) => {
 
     try {
-        const response = await axios.post("http://localhost:4000/auth", {
-          email,
-          password
-        });
+        const response = await loginService(email, password);
 
         if(response.status === 200){
 
-          const user = response.data.user;
+          const { user, token } = response.data;
           setUser(user);
+          
+          localStorage.setItem('loggedUser', JSON.stringify(user));
+          localStorage.setItem('token', token);
+
+          api.defaults.headers.Authorization = `Bearer ${token}`;
+
           navigate("/home");
 
         }
-
-        console.log('response', response);
-        console.log('user', user);
-
 
 
       } catch (error) {
@@ -49,6 +63,7 @@ export const AuthenticatorProvider =  ({children}) => {
       value={{
         authenticated: Boolean(user),
         user,
+        loading,
         loginMessage,
         login,
       }}>

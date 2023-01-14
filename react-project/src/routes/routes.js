@@ -13,12 +13,17 @@ const RoutesApp = () => {
   
   const Private = ({ children }) => {
     const { authenticated } = useContext(AuthContext);
-    console.log('authenticated', authenticated);
-    
+    const { loading } = useContext(AuthContext);
+
+    if(loading) {
+      return <div><h1>Loading</h1></div>;
+    }
+
     if (!authenticated) {
       console.log('entrou vou redirecionar');
       return <Navigate to="/" />;
     }
+
     return children;
   };
 
