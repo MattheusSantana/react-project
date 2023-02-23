@@ -8,6 +8,7 @@ import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import { AuthContext, AuthenticatorProvider } from "../contexts/auth";
 import { useContext } from "react";
+import Movie from "../pages/Movie";
 
 const RoutesApp = () => {
   
@@ -31,7 +32,7 @@ const RoutesApp = () => {
     <Router>
       <AuthenticatorProvider>
         <Routes>
-          <Route exact path="/" element={<Signin />} />
+          <Route exact path="/" element={<Movie />} />
           <Route
             exact
             path="/home"

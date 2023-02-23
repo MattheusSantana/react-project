@@ -1,13 +1,14 @@
 import React, {useContext, useState} from 'react'
 import './home.css';
-import { AuthContext } from '../contexts/auth.js';
+import { AuthContext } from '../contexts/auth.js'
+import Button from '../components/styledButton';
 
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
  
-  const { authenticated, login, loginMessage} = useContext(AuthContext);
+  const { login, loginMessage} = useContext(AuthContext);
   
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -18,7 +19,6 @@ const Signin = () => {
   return (
     <div id="login">
       <h1 className="title">Login</h1>
-      <p>{String(authenticated, loginMessage)}</p>
       <form className="form" onSubmit={handleSubmit}>
         <div className="field">
             <label htmlFor="email">Email</label>
@@ -30,7 +30,7 @@ const Signin = () => {
         </div>
         <div className="actions">
         {loginMessage}
-          <button type="submit">Login</button>
+        <button type="submit">Login</button>
         </div>
       </form>
     </div>
