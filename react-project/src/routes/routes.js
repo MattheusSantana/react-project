@@ -5,10 +5,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "../pages/Home";
-import Signin from "../pages/Signin";
 import { AuthContext, AuthenticatorProvider } from "../contexts/auth";
 import { useContext } from "react";
 import Movie from "../pages/Movie";
+import Checkbox from "../components/Checkbox";
+import DependencyArray from "../components/DependencyArray"
 
 const RoutesApp = () => {
   
@@ -42,6 +43,8 @@ const RoutesApp = () => {
               </Private>
             }
           />
+          <Route exact path="/checkbox" element={<Checkbox />}/>
+          <Route exact path="/dependencyArray" element={<DependencyArray />}/>  
         </Routes>
       </AuthenticatorProvider>
     </Router>
