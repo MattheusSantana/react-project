@@ -9,7 +9,8 @@ import { AuthContext, AuthenticatorProvider } from "../contexts/auth";
 import { useContext } from "react";
 import Movie from "../pages/Movie";
 import Checkbox from "../components/Checkbox";
-import DependencyArray from "../components/DependencyArray"
+import DependencyArray from "../components/DependencyArray";
+import UseLayoutEffect from "../components/UseLayoutEffect";
 
 const RoutesApp = () => {
   
@@ -45,6 +46,7 @@ const RoutesApp = () => {
           />
           <Route exact path="/checkbox" element={<Checkbox />}/>
           <Route exact path="/dependencyArray" element={<DependencyArray />}/>  
+          <Route exact path="useLayoutEffect" element={<UseLayoutEffect/>} />
         </Routes>
       </AuthenticatorProvider>
     </Router>
