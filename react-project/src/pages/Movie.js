@@ -12,7 +12,7 @@ const Movie = () => {
       .then((res) => res.json())
       .then((data) => setMovies(data.results));
   }, []);
-
+  
   const handleSearch = (e) => {
     e.preventDefault();
 

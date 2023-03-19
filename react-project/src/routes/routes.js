@@ -11,6 +11,7 @@ import Movie from "../pages/Movie";
 import Checkbox from "../components/Checkbox";
 import DependencyArray from "../components/DependencyArray";
 import UseLayoutEffect from "../components/UseLayoutEffect";
+import Github from "../pages/Github";
 
 const RoutesApp = () => {
   
@@ -46,7 +47,8 @@ const RoutesApp = () => {
           />
           <Route exact path="/checkbox" element={<Checkbox />}/>
           <Route exact path="/dependencyArray" element={<DependencyArray />}/>  
-          <Route exact path="useLayoutEffect" element={<UseLayoutEffect/>} />
+          <Route exact path="/useLayoutEffect" element={<UseLayoutEffect/>} />
+          <Route exact path="/github" element={<Github/>}/>
         </Routes>
       </AuthenticatorProvider>
     </Router>
